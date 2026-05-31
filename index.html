@@ -16,8 +16,6 @@
       --coral: #ffd8cf;
       --gold: #f6e6a8;
       --green: #245b45;
-      --blue: #244d7a;
-      --red: #884033;
     }
 
     * {
@@ -128,86 +126,61 @@
       line-height: 1.45;
     }
 
-    .grid {
+    .page-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .topic {
+    .page-link {
+      display: flex;
       min-height: 230px;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 24px;
       border: 2px solid var(--ink);
       background: #ffffff;
       box-shadow: 6px 6px 0 rgba(23, 33, 43, 0.16);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .topic:nth-child(2) {
+    .page-link:nth-child(2) {
       background: var(--sky);
     }
 
-    .topic:nth-child(3) {
+    .page-link:nth-child(3) {
       background: var(--mint);
     }
 
-    .topic:nth-child(4) {
-      background: var(--coral);
+    .page-link:hover,
+    .page-link:focus-visible {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 rgba(23, 33, 43, 0.22);
+      outline: none;
     }
 
-    .topic:nth-child(5) {
-      background: var(--gold);
-    }
-
-    .topic h2 {
+    .page-link h2 {
       margin: 0 0 12px;
       font-size: 1.35rem;
     }
 
-    .topic p {
+    .page-link p {
       margin: 0;
       color: #42505c;
       line-height: 1.6;
     }
 
-    .wide {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 20px;
-      align-items: center;
-      background: #ffffff;
-    }
-
-    .meter {
-      display: grid;
-      gap: 10px;
-    }
-
-    .bar {
-      height: 16px;
-      border: 1px solid var(--ink);
-      background: #fff;
-    }
-
-    .bar span {
-      display: block;
-      height: 100%;
+    .button-text {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 28px;
+      padding: 10px 14px;
+      border: 2px solid var(--ink);
       background: var(--green);
-    }
-
-    .bar:nth-child(2) span {
-      width: 72%;
-      background: var(--blue);
-    }
-
-    .bar:nth-child(3) span {
-      width: 46%;
-      background: var(--red);
-    }
-
-    .bar:nth-child(4) span {
-      width: 88%;
-      background: #9c7b21;
+      color: #fff;
+      font-weight: 700;
     }
 
     footer {
@@ -225,13 +198,8 @@
       }
 
       .hero,
-      .grid,
-      .wide {
+      .page-grid {
         grid-template-columns: 1fr;
-      }
-
-      .wide {
-        grid-column: span 1;
       }
 
       .intro {
@@ -244,16 +212,15 @@
   <main>
     <section class="hero" aria-labelledby="page-title">
       <div class="intro">
-        <div class="label">Small thoughts, loose ideas</div>
-        <h1 id="page-title">A Page About Random Stuff</h1>
+        <div class="label">Pick a page</div>
+        <h1 id="page-title">Website..?</h1>
         <p>
-          Not every page needs one grand topic. This one collects tiny observations about
-          everyday things: snacks, weather, odd facts, background music, and the strange
-          way a clean desk can make a whole afternoon feel different.
+          Not every page needs one grand topic. This landing page now points to the
+          random notes, random topics, and the very official Randomness Meter.
         </p>
       </div>
 
-      <aside class="notice-board" aria-label="Random notes">
+      <aside class="notice-board" aria-label="Random notes preview">
         <div class="note">
           <strong>Today's tiny theory</strong>
           <span>Water tastes better at 2 a.m. because silence improves the flavor.</span>
@@ -269,57 +236,34 @@
       </aside>
     </section>
 
-    <section class="grid" aria-label="Random topics">
-      <article class="topic">
-        <h2>Cloud Watching</h2>
-        <p>
-          Clouds are free abstract art. Some look like mountains, some look like soup,
-          and some look like the sky forgot what it was drawing halfway through.
-        </p>
-      </article>
+    <section class="page-grid" aria-label="Pages">
+      <a class="page-link" href="notes.html">
+        <div>
+          <h2>Random Notes</h2>
+          <p>Small theories, desk updates, and useful nonsense collected in one page.</p>
+        </div>
+        <span class="button-text">Open notes</span>
+      </a>
 
-      <article class="topic">
-        <h2>Snack Logic</h2>
-        <p>
-          The best snack is usually the one you did not plan. A random biscuit, cold
-          fruit, or leftover slice of pizza can feel like treasure.
-        </p>
-      </article>
+      <a class="page-link" href="topics.html">
+        <div>
+          <h2>Random Topics</h2>
+          <p>Clouds, snacks, lost objects, and background music with no serious agenda.</p>
+        </div>
+        <span class="button-text">Open topics</span>
+      </a>
 
-      <article class="topic">
-        <h2>Lost Objects</h2>
-        <p>
-          Keys and chargers have a talent for hiding in obvious places. They wait until
-          you check the impossible places first, then reappear beside your hand.
-        </p>
-      </article>
-
-      <article class="topic wide">
+      <a class="page-link" href="randomness-meter.html">
         <div>
           <h2>Randomness Meter</h2>
-          <p>
-            A very unofficial measurement of how much assorted stuff is happening here.
-          </p>
+          <p>A very unofficial measurement of how much assorted stuff is happening here.</p>
         </div>
-        <div class="meter" aria-label="Decorative randomness meter">
-          <div class="bar"><span style="width: 64%;"></span></div>
-          <div class="bar"><span></span></div>
-          <div class="bar"><span></span></div>
-          <div class="bar"><span></span></div>
-        </div>
-      </article>
-
-      <article class="topic">
-        <h2>Background Music</h2>
-        <p>
-          Lo-fi beats, game soundtracks, rain noise, and movie scores all change the same
-          room into completely different places.
-        </p>
-      </article>
+        <span class="button-text">Open meter</span>
+      </a>
     </section>
 
     <footer>
-      Built for wandering thoughts, half-finished ideas, and small details that are oddly fun.
+      Built from wandering thoughts, half-finished ideas, and small details that are oddly fun. Enjoy.
     </footer>
   </main>
 </body>

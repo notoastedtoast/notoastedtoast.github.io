@@ -3,265 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Work</title>
+  <title>My Work</title>
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #f6f4ef;
-      --surface: #ffffff;
-      --surface-soft: #ebe7dd;
-      --text: #20242a;
-      --muted: #656d78;
-      --line: #d8d3c8;
-      --accent: #2f6f73;
-      --accent-dark: #245357;
-      --warm: #c5813d;
-      --radius: 8px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      color: #222;
+      background: #eef6ff;
     }
 
-    .site-header {
-      border-bottom: 1px solid var(--line);
-      background: rgba(246, 244, 239, 0.94);
+    header {
+      padding: 18px;
+      background: #2d6cdf;
+      color: white;
+      text-align: center;
     }
 
-    .nav {
-      display: flex;
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 16px 0;
+    nav {
+      margin-top: 12px;
     }
 
-    .brand {
-      color: inherit;
-      font-weight: 800;
+    nav a {
+      margin: 0 8px;
+      color: white;
+      font-weight: bold;
       text-decoration: none;
     }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      padding: 9px 12px;
-      border-radius: var(--radius);
-      color: var(--muted);
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible,
-    .nav-links a[aria-current="page"] {
-      color: var(--text);
-      background: var(--surface-soft);
-      outline: none;
+    nav a:hover {
+      text-decoration: underline;
     }
 
     main {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 48px 0;
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 16px;
     }
 
-    .page-title {
-      max-width: 720px;
-      margin-bottom: 32px;
+    section {
+      margin-bottom: 20px;
+      padding: 18px;
+      border: 1px solid #b8c7dd;
+      background: white;
     }
 
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    h1,
+    h2 {
+      margin-top: 0;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .lead {
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.75;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    p {
+      line-height: 1.5;
     }
 
     .project {
-      display: flex;
-      min-height: 300px;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
+      margin-bottom: 14px;
+      padding: 14px;
+      border: 1px solid #cbd6e6;
+      background: #f7fbff;
     }
 
-    .project h2 {
-      margin: 0 0 12px;
-      font-size: 1.25rem;
-    }
-
-    .project p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    .tag {
-      padding: 7px 9px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fbfaf7;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    .status {
-      margin-bottom: 18px;
-      color: var(--warm);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    footer {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 36px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 880px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      main {
-        padding: 34px 0;
-      }
-
-      .projects {
-        grid-template-columns: 1fr;
-      }
+    .project h3 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">Portfolio</a>
-      <div class="nav-links">
-        <a href="about.html">About</a>
-        <a href="work.html" aria-current="page">Work</a>
-        <a href="contact.html">Contact</a>
-      </div>
+  <header>
+    <h1>My Work</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="page-title" aria-labelledby="page-title">
-      <p class="eyebrow">Work</p>
-      <h1 id="page-title">Projects that show progress, not just decoration.</h1>
-      <p class="lead">
-        Use this page to collect your best work. Each card gives enough context for
-        visitors to understand what the project is and what you practiced.
-      </p>
-    </section>
+    <section>
+      <h2>Projects</h2>
 
-    <section class="projects" aria-label="Projects">
-      <article class="project">
-        <div>
-          <div class="status">Featured</div>
-          <h2>Portfolio Website</h2>
-          <p>
-            A clean personal website with multiple pages, balanced spacing, responsive
-            layout, and clearer content for visitors.
-          </p>
-        </div>
-        <div class="tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Responsive</span>
-        </div>
-      </article>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>
+          This is the website you are looking at now. I made it using HTML and CSS.
+        </p>
+      </div>
 
-      <article class="project">
-        <div>
-          <div class="status">In progress</div>
-          <h2>School Project</h2>
-          <p>
-            Add a real school assignment, research task, or practical build here.
-            Explain the goal, your role, and what you learned.
-          </p>
-        </div>
-        <div class="tags">
-          <span class="tag">Research</span>
-          <span class="tag">Writing</span>
-          <span class="tag">Presentation</span>
-        </div>
-      </article>
+      <div class="project">
+        <h3>School Project</h3>
+        <p>
+          I can add one of my school projects here later and write what it was about.
+        </p>
+      </div>
 
-      <article class="project">
-        <div>
-          <div class="status">Next</div>
-          <h2>JavaScript Experiment</h2>
-          <p>
-            Reserve this space for an interactive project once you start adding
-            JavaScript, forms, small tools, or browser-based experiments.
-          </p>
-        </div>
-        <div class="tags">
-          <span class="tag">JavaScript</span>
-          <span class="tag">UI</span>
-          <span class="tag">Practice</span>
-        </div>
-      </article>
+      <div class="project">
+        <h3>Future JavaScript Project</h3>
+        <p>
+          I want to make a small interactive project when I learn more JavaScript.
+        </p>
+      </div>
     </section>
   </main>
-
-  <footer>
-    Keep only your strongest work here. A short, clear project card is better than a noisy one.
-  </footer>
 </body>
 </html>

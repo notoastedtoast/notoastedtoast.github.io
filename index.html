@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Comic Sans MS", cursive, sans-serif;
       color: #222;
       background: #eef6ff;
     }
@@ -73,6 +73,11 @@
       font-weight: bold;
     }
 
+    .profile-image {
+      display: block;
+      margin: 0 auto;
+    }
+
     footer {
       padding: 18px;
       color: #555;
@@ -104,19 +109,19 @@
 
   <main>
     <section>
-      <h2>Hello</h2>
+      <h2>Hello!</h2>
       <p>
-        This is my portfolio website. I am a student and I am still learning how to
-        make websites. I made this to show some of my work and what I am practicing.
+        This is my portfolio website. I am still learning how to make websites. 
+        I made this to show some of my work and what I am practicing.
       </p>
       <p>
-        It is not meant to look like a professional company website. It is just a simple
-        student portfolio that I can improve over time.
+        Although it look like this but it sure does contain a lot of information about me.
       </p>
+      <img src = "https://avatars.githubusercontent.com/u/193247633?s=64&v=4" alt = "Image" style="display: block; margin: 0 auto;">
     </section>
 
     <section>
-      <h2>Pages</h2>
+      <h2>Contents</h2>
       <div class="links">
         <div class="box">
           <h3>About Me</h3>
@@ -140,7 +145,18 @@
   </main>
 
   <footer>
-    Made for my student portfolio.
+    <p id="footer-text">Placeholder</p>
   </footer>
+
+  <script>
+    const footerOptions = [
+    "Made by me!",
+    "Chesburger",
+    "Cat obsessor."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * footerOptions.length);
+    document.getElementById("footer-text").textContent = footerOptions[randomIndex];
+  </script>
 </body>
 </html>

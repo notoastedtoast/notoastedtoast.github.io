@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dao Duy Bach — Student Engineer Portfolio</title>
 <meta name="description" content="Portfolio of Dao Duy Bach — high-school maker and engineer from Hanoi. IoT, embedded systems, robotics and AI projects.">
 <link rel="stylesheet" href="assets/style.css">
+<script>try{if(localStorage.getItem("site-theme")==="dark")delete document.documentElement.dataset.theme}catch(e){}</script>
 </head>
 <body>
 
@@ -18,85 +19,87 @@
     <a href="activities.html"><span>04.</span>Activities</a>
     <a href="contact.html"><span>05.</span>Contact</a>
   </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode">☾ dark</button>
 </nav>
 
 <main>
 
   <!-- ================= HERO ================= -->
   <section class="hero home" id="top">
-    <div class="kicker">Hi, my name is</div>
-    <h1>Dao Duy Bach<span class="dim">.</span><br><span class="dim">I build things that sense the world.</span></h1>
-    <p class="sub">High-school student engineer from <b>Hanoi, Vietnam</b> — designing
-      <b>IoT &amp; embedded systems</b> for health and the environment, from sensor to cloud to dashboard.</p>
-    <div>
-      <span class="tag">ESP32 / Embedded C</span>
-      <span class="tag">Python</span>
-      <span class="tag blue">IoT &amp; Cloud</span>
-      <span class="tag blue">Robotics</span>
-      <span class="tag amber">Fuzzy Logic / AI</span>
+    <div class="hero-top">
+      <div class="hero-intro">
+        <div class="kicker">Hi, my name is</div>
+        <h1>Dao Duy Bach<span class="dim">.</span><br><span class="dim">I build things that sense the world.</span></h1>
+        <p class="sub">A highschool student from <b>Hanoi, Vietnam aiming for Engineering Major</b> — designing
+          <b>IoT &amp; embedded systems</b> for health and the environment in hopes of making life better for people.</p>
+      </div>
+      <!-- YOUR PHOTO: put the file in the assets folder, then set src below (e.g. assets/me.jpg) -->
+      <div class="hero-photo">
+        <span class="ph">your photo here</span>
+        <img src="assets/profile.jpg" alt="Dao Duy Bach" onerror="this.remove()">
+      </div>
     </div>
-
     <div class="term">
       <div class="term-bar"><i></i><i></i><i></i><span>bach@hanoi:~/portfolio</span></div>
       <div class="term-body" id="term"></div>
     </div>
 
     <div class="hero-stats">
-      <div class="hstat"><div class="v" data-count="2">0</div><div class="k">Hardware products built</div></div>
+      <div class="hstat"><div class="v" data-count="7.5">0</div><div class="k">IELTS</div></div>
+            <div class="hstat"><div class="v" data-count="A*AA">0</div><div class="k">A-Level subjects</div></div>
       <div class="hstat"><div class="v" data-count="14">0</div><div class="k">Awards &amp; competition certificates</div></div>
-      <div class="hstat"><div class="v" data-count="5">0</div><div class="k">Clubs &amp; communities</div></div>
       <div class="hstat"><div class="v" data-count="10">0</div><div class="k">Years of piano</div></div>
     </div>
   </section>
 
   <!-- ================= EXPLORE ================= -->
   <section class="portals" id="explore">
-    <div class="sec-head reveal"><h2>Explore</h2><div class="rule"></div></div>
-    <p class="explore-note reveal">Pick a section below, or use the menu in the top bar to move between pages at any time.</p>
+    <div class="sec-head reveal"><h2>Explore more about me...</h2><div class="rule"></div></div>
     <div class="portal-grid">
       <a class="portal reveal" href="about.html">
         <span class="no">01.</span>
         <h3>About Me</h3>
-        <p>Who I am, the kinds of problems I like, and the toolkit I use, from ESP32 firmware to fuzzy logic.</p>
-        <span class="meta">Background · Skills</span>
+        <p>A little bit information about myself, what I like and my current education.</p>
+        <span class="meta">Background</span>
         <span class="go">$ cd ./about →</span>
       </a>
       <a class="portal reveal" href="projects.html">
         <span class="no">02.</span>
         <h3>Featured Projects</h3>
-        <p>Smart Pillow, a wearable-free sleep monitor, and Air Map, a real-time air-quality network for Hanoi.</p>
+        <p>Section reserved for some of the most notable projects I've done.</p>
         <span class="meta">2 hardware builds</span>
         <span class="go">$ cd ./projects →</span>
       </a>
       <a class="portal reveal" href="achievements.html">
         <span class="no">03.</span>
         <h3>Achievements</h3>
-        <p>International medals, national robotics and AI awards, a published research paper, and certifications.</p>
-        <span class="meta">14 entries · 2024 – 2026</span>
+        <p>All of my achivements ranging from expertise to arts during 3 years of highschool.</p>
+        <span class="meta">14 entries</span>
         <span class="go">$ cd ./achievements →</span>
       </a>
       <a class="portal reveal" href="activities.html">
         <span class="no">04.</span>
         <h3>Activities &amp; Community</h3>
-        <p>Robotics and AI clubs, teaching and outreach volunteering, charity drives, and ten years of piano.</p>
-        <span class="meta">Clubs · Volunteering · Music</span>
+        <p>Community-based activites, including clubs, teaching and chairty events.</p>
+        <span class="meta">Extracurricular</span>
         <span class="go">$ cd ./activities →</span>
       </a>
       <a class="portal reveal" href="contact.html">
         <span class="no">05.</span>
-        <h3>Get In Touch</h3>
-        <p>Want to talk embedded systems or robotics, or need documentation for anything here? Send me a message.</p>
+        <h3>Contact me</h3>
+        <p>Want to discuss further on my future aims or simply to make friends, I'm always available!</p>
         <span class="meta">Hanoi · UTC+7</span>
         <span class="go">$ cd ./contact →</span>
       </a>
     </div>
+    <p class="explore-note reveal">...or use the menu in the top bar to move between pages at any time!</p>
   </section>
 
 </main>
 
 <footer>
   <span>© 2026 Dao Duy Bach</span>
-  <span>designed &amp; hand-coded · no frameworks · <span style="color:var(--accent)">sensor → cloud → insight</span></span>
+  <span>designed with love &amp; coded by me · <span style="color:var(--accent)">portfolio</span></span>
 </footer>
 
 <script src="assets/main.js"></script>

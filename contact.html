@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Dao Duy Bach</title>
 <meta name="description" content="Get in touch with Dao Duy Bach.">
 <link rel="stylesheet" href="assets/style.css">
+<script>try{if(localStorage.getItem("site-theme")==="dark")delete document.documentElement.dataset.theme}catch(e){}</script>
 </head>
 <body>
 
@@ -18,16 +19,34 @@
     <a href="activities.html"><span>04.</span>Activities</a>
     <a href="contact.html" class="active" aria-current="page"><span>05.</span>Contact</a>
   </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode">☾ dark</button>
 </nav>
 
 <main class="page">
 
-  <section id="contact" class="contact">
-    <div class="sec-head reveal" style="justify-content:center"><h2>Get In Touch</h2><div class="rule"></div></div>
-    <p class="reveal">I'm always happy to talk about embedded systems, robotics, or a project idea —
-       or to share documentation and certificates for anything on this page.</p>
-    <a class="btn reveal" href="mailto:duybach1809@gmail.com">$ send_message --to bach</a>
-    <p class="reveal mono" style="margin-top:26px;font-size:12.5px;color:var(--dim)">Hanoi, Vietnam · UTC+7</p>
+  <section id="contact">
+    <div class="sec-head reveal"><h2>Get In Touch</h2><div class="rule"></div></div>
+    <div class="contact-grid">
+
+      <!-- ===== LEFT: short intro ===== -->
+      <div class="contact-intro reveal">
+        <p>I'm always happy to talk about embedded systems, robotics, or a project idea —
+           or to share documentation and certificates for anything on this site.</p>
+        <p>Email is the best way to reach me. I usually reply within a few days.</p>
+      </div>
+
+      <!-- ===== RIGHT: contact details — EDIT THE LINES BELOW =====
+           Each row: <span class="k">LABEL</span> then the value.
+           Links:  change BOTH the href="..." and the visible text.
+           Don't need a row? Delete its whole <li>...</li> line. -->
+      <ul class="contact-list reveal">
+        <li><span class="k">Email</span><a class="v" href="mailto:duybach1809@gmail.com">duybach1809@gmail.com</a></li>
+        <li><span class="k">Phone</span><span class="v">+84 378 182 009</span></li>
+        <li><span class="k">LinkedIn</span><a class="v" href="www.linkedin.com/in/notoastedtoast" target="_blank" rel="noopener">linkedin.com/in/notoastedtoast</a></li>
+        <li><span class="k">GitHub</span><a class="v" href="https://github.com/notoastedtoast" target="_blank" rel="noopener">github.com/notoastedtoast</a></li>
+      </ul>
+
+    </div>
   </section>
 
 </main>
@@ -35,7 +54,7 @@
 
 <footer>
   <span>© 2026 Dao Duy Bach</span>
-  <span>designed &amp; hand-coded · no frameworks · <span style="color:var(--accent)">sensor → cloud → insight</span></span>
+  <span>designed with love &amp; coded by me · <span style="color:var(--accent)">contact @ portfolio</span></span>
 </footer>
 
 <script src="assets/main.js"></script>

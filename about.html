@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Dao Duy Bach</title>
 <meta name="description" content="About Dao Duy Bach — high-school maker from Hanoi working on IoT, embedded systems and AI.">
 <link rel="stylesheet" href="assets/style.css">
+<script>try{if(localStorage.getItem("site-theme")==="dark")delete document.documentElement.dataset.theme}catch(e){}</script>
 </head>
 <body>
 
@@ -18,6 +19,7 @@
     <a href="activities.html"><span>04.</span>Activities</a>
     <a href="contact.html"><span>05.</span>Contact</a>
   </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode">☾ dark</button>
 </nav>
 
 <main class="page">
@@ -70,7 +72,7 @@
 
 <footer>
   <span>© 2026 Dao Duy Bach</span>
-  <span>designed &amp; hand-coded · no frameworks · <span style="color:var(--accent)">sensor → cloud → insight</span></span>
+  <span>designed with love &amp; coded by me · <span style="color:var(--accent)">myself @ portfolio</span></span>
 </footer>
 
 <script src="assets/main.js"></script>

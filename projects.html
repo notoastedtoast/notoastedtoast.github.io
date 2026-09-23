@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Dao Duy Bach</title>
+<meta name="description" content="Featured projects by Dao Duy Bach: Smart Pillow sleep monitor and Air Map air-quality network.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html"><b>&gt;_</b> dao.duy.bach</a>
+  <div class="navlinks">
+    <a href="about.html"><span>01.</span>About</a>
+    <a href="projects.html" class="active" aria-current="page"><span>02.</span>Projects</a>
+    <a href="achievements.html"><span>03.</span>Achievements</a>
+    <a href="activities.html"><span>04.</span>Activities</a>
+    <a href="contact.html"><span>05.</span>Contact</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <section id="projects">
+    <div class="sec-head reveal"><h2>Featured Projects</h2><div class="rule"></div></div>
+
+    <!-- Smart Pillow -->
+    <article class="proj reveal">
+      <div class="proj-head">
+        <span class="pid">PRJ-001</span>
+        <h3>Smart Pillow — Sleep-Monitoring System</h3>
+        <span class="status">Working prototype</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-txt">
+          <p class="lede">A non-invasive pillow that observes sleep through embedded sensors —
+             no wearables, no straps — and estimates core body temperature with a fuzzy-logic model.</p>
+          <p>Three temperature sensors and a humidity sensor are distributed inside the pillow body.
+             A temperature gradient across the sensors reveals head position; humidity trends indicate
+             night sweating. Data streams over BLE to a gateway and on to a cloud dashboard with
+             trends and alerts for families, schools and elderly-care programs.</p>
+          <table class="spec">
+            <tr><td>MCU</td><td>ESP32 — signal reading &amp; BLE transmission</td></tr>
+            <tr><td>Sensing</td><td>3× temperature + 1× humidity + 2× sound (snore/breathing option)</td></tr>
+            <tr><td>Algorithm</td><td>Fuzzy inference (IF–THEN rules) over ΔT, trend &amp; humidity context</td></tr>
+            <tr><td>Backend</td><td>Cloud storage &amp; analytics → live dashboard with alerts</td></tr>
+          </table>
+          <div class="pipe">
+            <span class="node">Pillow sensors<small>3×T + 1×H</small></span><span class="arr">──▶</span>
+            <span class="node">ESP32<small>acquisition</small></span><span class="arr">──▶</span>
+            <span class="node">BLE<small>low power</small></span><span class="arr">──▶</span>
+            <span class="node">Cloud<small>storage + analytics</small></span><span class="arr">──▶</span>
+            <span class="node">Dashboard<small>trends + alerts</small></span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">±1.5°C</div><div class="k">CBT estimation error (controlled test)</div></div>
+            <div class="metric"><div class="v">4+</div><div class="k">Fused signal channels</div></div>
+            <div class="metric"><div class="v">0</div><div class="k">Devices worn on the body</div></div>
+          </div>
+          <div>
+            <span class="tag">ESP32</span><span class="tag">BLE</span><span class="tag amber">Fuzzy logic</span>
+            <span class="tag blue">Cloud dashboard</span><span class="tag blue">Health tech</span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="shot"><img src="assets/pillow-concept.png" alt="Smart Pillow concept — embedded sensor grid, BLE link and cloud dashboard"><div class="cap">concept — sensor grid → BLE → cloud</div></div>
+          <div class="shot-row">
+            <div class="shot"><img src="assets/pillow-prototype.png" alt="Smart Pillow physical prototype with electronics module"><div class="cap">prototype v1</div></div>
+            <div class="shot"><img src="assets/pillow-module.png" alt="ESP32 electronics module inside enclosure"><div class="cap">ESP32 module</div></div>
+          </div>
+          <div class="shot"><img src="assets/pillow-testing.png" alt="Overnight test session with the Smart Pillow prototype"><div class="cap">live sleep-test session</div></div>
+          <div class="shot"><img src="assets/pillow-dashboard.png" alt="Smart Pillow web dashboard showing live breathing rate, snore level and pump state"><div class="cap">web dashboard — live session UI</div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Air Map -->
+    <article class="proj reveal">
+      <div class="proj-head">
+        <span class="pid">PRJ-002</span>
+        <h3>Air Map — Real-Time Air-Quality Ecosystem</h3>
+        <span class="status">1I1W 2026 — Gold Medal</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-txt">
+          <p class="lede">An IoT network that makes Hanoi's invisible air pollution <i>tangible</i> —
+             a physical LED map of the city glows green, yellow or red district by district, in real time.</p>
+          <p>Custom ESP32 sensing nodes measure PM2.5/PM10 dust plus temperature and humidity, and push
+             readings over Wi-Fi to the ThingSpeak cloud. A central controller pulls the data back via
+             REST API to drive addressable LEDs embedded in a laser-cut 3D map, while a companion mobile
+             app (MIT App Inventor) shows AQI charts and history. Awarded a
+             <b>Gold Medal at 1 Idea 1 World (1I1W) 2026</b>, an international innovation, design and
+             startup competition held in Istanbul, Türkiye (March 2026).</p>
+          <table class="spec">
+            <tr><td>Sensing node</td><td>ESP32 + PMS7003 laser dust sensor + AHT10 (temp/humidity)</td></tr>
+            <tr><td>Cloud</td><td>ThingSpeak — storage, processing, historical API</td></tr>
+            <tr><td>Physical layer</td><td>3D city map + WS2812B LEDs, color-coded AQI per district</td></tr>
+            <tr><td>Digital layer</td><td>Android app (MIT App Inventor) — live map, charts, alerts</td></tr>
+          </table>
+          <div class="pipe">
+            <span class="node">ESP32 nodes<small>PM2.5 / PM10 / T / H</small></span><span class="arr">──▶</span>
+            <span class="node">ThingSpeak<small>cloud DB</small></span><span class="arr">──▶</span>
+            <span class="node">REST API<small>GET / AQI calc</small></span><span class="arr">──▶</span>
+            <span class="node">LED city map<small>+ mobile app</small></span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">2</div><div class="k">Visualization layers (physical + app)</div></div>
+            <div class="metric"><div class="v">AQI</div><div class="k">Normalized to international standards</div></div>
+            <div class="metric"><div class="v">24/7</div><div class="k">Logged for long-term trend research</div></div>
+          </div>
+          <div>
+            <span class="tag">ESP32</span><span class="tag">PMS7003</span><span class="tag blue">ThingSpeak</span>
+            <span class="tag blue">REST API</span><span class="tag amber">Physical data viz</span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="shot" style="max-height:640px"><img src="assets/airmap-poster.png" alt="Air Map competition poster — 1I1W 2026 Gold Medal" style="object-fit:contain;background:#fff"><div class="cap">official poster — 1I1W 2026 · Gold Medal</div></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+
+<footer>
+  <span>© 2026 Dao Duy Bach</span>
+  <span>designed &amp; hand-coded · no frameworks · <span style="color:var(--accent)">sensor → cloud → insight</span></span>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

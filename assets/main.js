@@ -1,7 +1,7 @@
 /* terminal typing */
 const lines = [
   {p:"$ ", t:"whoami"},
-  {o:"student_engineer · maker · Hanoi, VN"},
+  {o:"future_electrical_engineer · maker · Hanoi, VN"},
   {p:"$ ", t:"ls ~/projects"},
   {o:"smart-pillow/   air-map/   vex-iq-robot/"},
   {p:"$ ", t:"cat mission.txt"},

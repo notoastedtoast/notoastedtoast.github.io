@@ -27,9 +27,9 @@
   --panel-2:#e3e8ed;
   --line:#cfd6de;
   --line-2:#bcc6d1;
-  --txt:#16202c;
-  --muted:#46566a;
-  --dim:#56657a;
+  --txt:#0f1722;
+  --muted:#334155;
+  --dim:#46546a;
   --accent:#08705b;
   --accent-2:#2459b3;
   --amber:#8f5200;
@@ -55,8 +55,8 @@ body::before{
   content:"";
   position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:
-    linear-gradient(var(--grid) 1px,transparent 1px),
-    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    linear-gradient(var(--grid) 2px,transparent 2px),
+    linear-gradient(90deg,var(--grid) 2px,transparent 2px);
   background-size:44px 44px;
 }
 main,nav,footer{position:relative;z-index:1}
@@ -143,19 +143,18 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
 .hstat .k{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:1.2px;margin-top:3px}
 
 /* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:46px}
-@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.about-grid p{color:var(--muted);margin-bottom:16px;font-size:15.5px}
-.about-grid p b{color:var(--txt)}
-.skillbox{
-  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;
+.about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px}
+.about-text p b{color:var(--txt)}
+.about-rows{display:flex;flex-direction:column;gap:56px}
+.about-row{display:grid;grid-template-columns:1.2fr 1fr;gap:46px;align-items:center}
+.about-row.flip{grid-template-columns:1fr 1.2fr}
+.about-img{border:1px solid var(--line-2);border-radius:10px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 50px var(--shadow)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-fig figcaption{margin-top:10px;font-size:13px;color:var(--dim);text-align:center}
+@media(max-width:860px){
+  .about-row,.about-row.flip{grid-template-columns:1fr;gap:22px}
+  .about-row .about-fig{order:-1}
 }
-.skillbox h3{
-  font-family:var(--mono);font-size:12.5px;color:var(--dim);
-  text-transform:uppercase;letter-spacing:1.5px;margin:18px 0 8px;
-}
-.skillbox h3:first-child{margin-top:0}
-.skillbox h3::before{content:"// ";color:var(--accent)}
 
 /* ---------- projects ---------- */
 .proj{
@@ -348,3 +347,38 @@ main p a:hover, .contact-list a.v:hover{color:var(--accent);text-decoration-colo
   .hero-top{grid-template-columns:1fr;gap:28px}
   .hero-photo{order:-1;width:180px}
 }
+
+/* home: highlights strip */
+.highlights{padding-top:40px;padding-bottom:0}
+.hl-list{list-style:none;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.hl-list li{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:baseline;
+  padding:18px 24px;border-bottom:1px solid var(--line)}
+.hl-list li:last-child{border-bottom:none}
+.hl-list .d{font-family:var(--mono);font-size:12.5px;color:var(--amber)}
+.hl-list b{font-size:16.5px;color:var(--txt)}
+.hl-list p{color:var(--muted);font-size:14.5px;margin-top:3px}
+.hl-list a{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.hl-list a:hover{text-decoration:underline}
+@media(max-width:700px){
+  .hl-list li{grid-template-columns:1fr;gap:4px}
+}
+
+/* jump links (e.g. projects.html#air-map) land below the fixed nav */
+[id]{scroll-margin-top:90px}
+
+/* projects: citation panel for the research paper */
+.paper-card{
+  background:var(--panel);border:1px solid var(--line-2);border-radius:6px;padding:22px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.paper-card .journal{font-family:var(--mono);font-size:11.5px;color:var(--amber);text-transform:uppercase;letter-spacing:1px}
+.paper-card h4{font-size:17px;line-height:1.35;color:var(--txt)}
+.paper-card .authors{font-size:13.5px;color:var(--muted)}
+.paper-card .authors b{color:var(--txt)}
+.paper-card .kw{font-size:12.5px;color:var(--dim)}
+.paper-card a{font-family:var(--mono);font-size:12.5px;margin-top:4px}
+.paper-card a:hover{text-decoration:underline}
+
+/* activity card with two photos side by side */
+.card.photo .duo{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.card.photo .duo img{height:190px}

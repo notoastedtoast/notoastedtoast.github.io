@@ -25,10 +25,10 @@
 <main class="page">
 
   <section id="projects">
-    <div class="sec-head reveal"><h2>Featured Projects</h2><div class="rule"></div></div>
+    <div class="sec-head reveal"><h2>Featured projects and papers</h2><div class="rule"></div></div>
 
     <!-- Smart Pillow -->
-    <article class="proj reveal">
+    <article class="proj reveal" id="smart-pillow">
       <div class="proj-head">
         <span class="pid">PRJ-001</span>
         <h3>Smart Pillow — Sleep-Monitoring System</h3>
@@ -78,7 +78,7 @@
     </article>
 
     <!-- Air Map -->
-    <article class="proj reveal">
+    <article class="proj reveal" id="air-map">
       <div class="proj-head">
         <span class="pid">PRJ-002</span>
         <h3>Air Map — Real-Time Air-Quality Ecosystem</h3>
@@ -121,6 +121,58 @@
         </div>
       </div>
     </article>
+
+    <!-- Research paper -->
+    <article class="proj reveal" id="traffic-paper">
+      <div class="proj-head">
+        <span class="pid">PRJ-003</span>
+        <h3>AI &amp; IoT for Traffic Congestion in Hanoi — Research Paper</h3>
+        <span class="status">Published — IJMSM 2026</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-txt">
+          <p class="lede">A co-authored research paper proposing an AI- and IoT-based traffic-management framework for Hanoi,
+             where fixed-time traffic signals cannot keep up with fast-changing, motorcycle-heavy traffic.</p>
+          <p>The paper reviews two decades of adaptive traffic-signal research — from Q-learning and fuzzy / ANFIS
+             controllers tested on Hanoi intersections to multi-agent deep reinforcement learning — and proposes a
+             four-layer architecture in which IoT sensors feed AI models that predict congestion and adjust signal timing
+             in a closed loop. It also analyses Hanoi's real deployment: in December 2025 the city connected
+             1,837 cameras with 188 AI-enabled signal-control cabinets and set up green-wave corridors. Written with
+             researchers from HUST and students from HUS High School for Gifted Students, Hanoi–Amsterdam and
+             Le Quy Don (Da Nang).</p>
+          <table class="spec">
+            <tr><td>Journal</td><td>International Journal of Multidisciplinary on Science and Management (IJMSM), Vol. 3, Issue 3 (Jul–Sep 2026)</td></tr>
+            <tr><td>Role</td><td>Co-author (7 authors)</td></tr>
+            <tr><td>Architecture</td><td>Sensing → communication → intelligence → application/control</td></tr>
+            <tr><td>Methods</td><td>LSTM / GNN traffic prediction, computer vision (YOLO-type detectors), reinforcement-learning signal control, green-wave coordination</td></tr>
+          </table>
+          <div class="pipe">
+            <span class="node">IoT sensing<small>cameras / radar / loops / GPS</small></span><span class="arr">──▶</span>
+            <span class="node">Communication<small>edge + cloud</small></span><span class="arr">──▶</span>
+            <span class="node">AI layer<small>predict / detect / optimise</small></span><span class="arr">──▶</span>
+            <span class="node">Control<small>adaptive signals + green waves</small></span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">4</div><div class="k">Layer AI–IoT architecture proposed</div></div>
+            <div class="metric"><div class="v">1,837</div><div class="k">Cameras in Hanoi's AI traffic system (Dec 2025)</div></div>
+            <div class="metric"><div class="v">31–36.8%</div><div class="k">Travel-time cut reported on Hanoi one-way corridors</div></div>
+          </div>
+          <div>
+            <span class="tag">IoT sensing</span><span class="tag">Control systems</span><span class="tag blue">Reinforcement learning</span>
+            <span class="tag blue">Computer vision</span><span class="tag amber">Research &amp; review</span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="paper-card">
+            <span class="journal">IJMSM · Vol. 3, Issue 3 · 2026</span>
+            <h4>Reducing Traffic Congestion in Hanoi, Vietnam Using Artificial Intelligence and Internet of Things</h4>
+            <p class="authors">Nguyen Xuan Hung, Lam An Binh, Le Huy Hoang, <b>Dao Duy Bach</b>, Nguyen Viet Anh, Bui Thai An, Vu Xuan Manh</p>
+            <p class="kw">Keywords: Internet of Things, AI, traffic congestion management</p>
+            <a href="https://ijmsm.org/ijmsm-v3i3p111.html" target="_blank" rel="noopener">read the paper →</a>
+          </div>
+        </div>
+      </div>
+    </article>
   </section>
 
 </main>
@@ -128,7 +180,7 @@
 
 <footer>
   <span>© 2026 Dao Duy Bach</span>
-  <span>designed with love &amp; coded by me · <span style="color:var(--accent)">skills @ portfolio</span></span>
+  <span>made with love · <span style="color:var(--accent)">skills @ portfolio</span></span>
 </footer>
 
 <script src="assets/main.js"></script>

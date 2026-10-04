@@ -144,6 +144,16 @@ document.querySelectorAll("a[data-lightbox]").forEach(a => a.addEventListener("c
   e.preventDefault();
   openLightbox(a.href, a.textContent.replace(/^photo:\s*/i, ""), a);
 }));
+const certificateDialog = document.querySelector(".certificate-dialog");
+const certificateZoom = document.querySelector(".certificate-zoom");
+const certificateClose = certificateDialog ? certificateDialog.querySelector(".certificate-close") : null;
+if(certificateDialog && certificateZoom && certificateClose){
+  certificateZoom.addEventListener("click", () => certificateDialog.showModal());
+  certificateClose.addEventListener("click", () => certificateDialog.close());
+  certificateDialog.addEventListener("click", e => {
+    if(e.target === certificateDialog) certificateDialog.close();
+  });
+}
 lbImg.addEventListener("click", e => {
   e.stopPropagation();
   if(lb.classList.contains("zoomed")) fitLightbox();

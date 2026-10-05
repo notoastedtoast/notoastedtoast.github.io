@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — Dao Duy Bach</title>
-<meta name="description" content="Featured projects by Dao Duy Bach: Smart Pillow sleep monitor and Air Map air-quality network.">
+<meta name="description" content="Featured projects by Dao Duy Bach, including the Smart Pillow, Air Map, traffic research, and a Fulbright classroom assistant prototype.">
 <link rel="stylesheet" href="assets/style.css">
 <script>try{if(localStorage.getItem("site-theme")==="dark")delete document.documentElement.dataset.theme}catch(e){}</script>
 </head>
@@ -175,6 +175,62 @@
             <p class="authors">Nguyen Xuan Hung, Lam An Binh, Le Huy Hoang, <b>Dao Duy Bach</b>, Nguyen Viet Anh, Bui Thai An, Vu Xuan Manh</p>
             <p class="kw">Keywords: Internet of Things, AI, traffic congestion management</p>
             <p class="proof"><a href="https://ijmsm.org/ijmsm-v3i3p111.html" target="_blank" rel="noopener">Paper: IJMSM journal page ↗</a></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Classroom Helper -->
+    <article class="proj reveal" id="classroom-helper">
+      <div class="proj-head">
+        <span class="pid">PRJ-004</span>
+        <h3>Classroom Helper — AI Teaching Assistant Prototype</h3>
+        <span class="status">Fulbright Vietnam 2026</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-txt">
+          <p class="lede">A voice-controlled classroom assistant prototype developed during the Fulbright Vietnam 2026 STEM Mentorship Program. It pairs a Windows desktop overlay with a browser-based interface for quick use in lessons and demos.</p>
+          <p>Users can ask questions in Vietnamese, open files by name, check their timetable, recap previous lessons, control presentation slides, and record transcripts with AI-generated lesson summaries. The prototype can also import a timetable from a photo and save lesson notes.</p>
+          <table class="spec">
+            <tr><td>Interfaces</td><td>Windows always-on-top overlay and Flask web app</td></tr>
+            <tr><td>Voice</td><td>Whisper Vietnamese transcription and Edge TTS on desktop; browser speech input on the web</td></tr>
+            <tr><td>AI</td><td>ZeroClaw with Groq, Ollama, and Anthropic fallback options</td></tr>
+            <tr><td>Classroom tools</td><td>Timetable import, lesson recap, file lookup, slide control, transcript, and summary</td></tr>
+          </table>
+          <div>
+            <span class="tag">Python</span><span class="tag blue">Flask</span><span class="tag blue">Whisper</span>
+            <span class="tag">Edge TTS</span><span class="tag amber">AI assistant</span>
+          </div>
+          <p class="proof"><a href="https://github.com/notoastedtoast/classroom-helper" target="_blank" rel="noopener">Source code on GitHub ↗</a></p>
+        </div>
+        <div class="proj-media">
+          <div class="proj-gallery">
+            <a class="shot hero-shot" href="assets/proj_fullbright_0o1%20(2).png" data-lightbox aria-label="View Classroom Helper landing page">
+              <img src="assets/proj_fullbright_0o1%20(2).png" alt="Classroom Helper Vietnamese web landing page with a live assistant preview" loading="lazy">
+              <span class="cap">Web landing page</span>
+            </a>
+            <a class="shot web-app-shot" href="assets/proj_fullbright_0o1%20(4).png" data-lightbox aria-label="View Classroom Helper desktop assistant with the file drawer">
+              <img src="assets/proj_fullbright_0o1%20(4).png" alt="Classroom Helper web assistant with timetable, saved files, and lesson notes" loading="lazy">
+              <span class="cap">Assistant with file drawer</span>
+            </a>
+            <a class="shot overlay-shot" href="assets/proj_fullbright_0o1%20(3).png" data-lightbox aria-label="View Classroom Helper desktop assistant window">
+              <img src="assets/proj_fullbright_0o1%20(3).png" alt="Classroom Helper desktop assistant overlay" loading="lazy">
+              <span class="cap">Desktop assistant window</span>
+            </a>
+            <a class="shot setup-shot" href="assets/proj_fullbright_0o1%20(5).png" data-lightbox aria-label="View Classroom Helper setup instructions">
+              <img src="assets/proj_fullbright_0o1%20(5).png" alt="Classroom Helper web page showing quick setup instructions" loading="lazy">
+              <span class="cap">Quick setup</span>
+            </a>
+            <a class="shot cert-shot" href="assets/proj_fullbright_0o1%20(1).png" data-lightbox aria-label="View Fulbright Vietnam STEM Mentorship certificate">
+              <img src="assets/proj_fullbright_0o1%20(1).png" alt="Fulbright Vietnam 2026 STEM Mentorship Program certificate of participation awarded to Dao Duy Bach" loading="lazy">
+              <span class="cap">Fulbright Vietnam 2026 · Certificate of participation</span>
+            </a>
+          </div>
+          <div class="paper-card">
+            <span class="journal">Prototype · STEM mentorship</span>
+            <h4>Support for the flow of a lesson</h4>
+            <p class="authors">Voice input → classroom assistant → schedules, files, slides, notes, and lesson summaries.</p>
+            <p class="kw">Early prototype; some features are still unfinished.</p>
           </div>
         </div>
       </div>

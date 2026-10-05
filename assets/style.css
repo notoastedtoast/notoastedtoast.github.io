@@ -181,6 +181,12 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
   border-left:1px solid var(--line);background:var(--bg-2);
   padding:22px;display:flex;flex-direction:column;gap:14px;
 }
+.proj-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+.proj-gallery .shot{aspect-ratio:1917/911;background:#090d17}
+.proj-gallery .shot img{display:block;width:100%;height:100%;object-fit:cover}
+.proj-gallery .hero-shot{grid-column:1/-1}
+.proj-gallery .cert-shot{grid-column:auto;aspect-ratio:990/761;background:#fff}
+.proj-gallery .cert-shot img{object-fit:contain;background:#fff}
 .airmap-proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
 .certificate-thumb{position:relative;min-width:0;aspect-ratio:0.68;overflow:hidden;border:1px solid var(--line-2);border-radius:6px;background:#fff}
 .certificate-preview{display:block;width:100%;height:100%;border:0;background:#fff;pointer-events:none}
@@ -191,7 +197,7 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
 .certificate-dialog::backdrop{background:rgba(5,9,14,.88)}
 .certificate-dialog iframe{width:100%;height:100%;flex:1;border:0;background:#fff}
 .certificate-close{position:absolute;top:16px;right:20px;z-index:1;width:34px;height:34px;border:1px solid var(--line-2);border-radius:6px;background:var(--panel);color:var(--txt);font-size:24px;line-height:1;cursor:pointer}
-@media(max-width:520px){.airmap-proof{grid-template-columns:1fr}}
+@media(max-width:520px){.airmap-proof,.proj-gallery{grid-template-columns:1fr}.proj-gallery .cert-shot{grid-column:auto}}
 @media(max-width:900px){.proj-media{border-left:none;border-top:1px solid var(--line)}}
 .shot{border:1px solid var(--line-2);border-radius:6px;overflow:hidden;position:relative}
 .shot img{width:100%;height:100%;object-fit:cover}
@@ -235,15 +241,26 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
 .tline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--line-2)}
 .tl-item{position:relative;padding-bottom:30px}
 .tl-item:last-child{padding-bottom:0}
+.tl-level{margin:18px 0 14px;color:var(--dim);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase}
+.tline > .tl-level:first-of-type{margin-top:0}
 .tl-item::before{
   content:"";position:absolute;left:-38px;top:7px;width:9px;height:9px;border-radius:50%;
   background:var(--bg);border:2px solid var(--accent);
 }
 .tl-item.gold::before{border-color:var(--amber)}
+.tl-item-layout{display:flex;align-items:flex-start;gap:24px}
+.tl-copy{flex:1;min-width:0}
+.tl-cert{display:block;flex:0 0 126px;width:126px;border:1px solid var(--line-2);border-radius:6px;background:#fff;overflow:hidden;transition:border-color .2s,transform .2s}
+.tl-cert:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tl-cert img{display:block;width:100%;height:auto;background:#fff}
 .tl-item .d{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.5px}
 .tl-item.gold .d{color:var(--amber)}
 .tl-item h4{font-size:16.5px;margin:3px 0 4px}
 .tl-item p{color:var(--muted);font-size:14px;max-width:720px}
+@media(max-width:600px){
+  .tl-item-layout{gap:14px}
+  .tl-cert{flex-basis:88px;width:88px}
+}
 
 /* ---------- activities ---------- */
 .act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
@@ -436,7 +453,7 @@ img.zoomable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* activities: "Show more" inside a card, with a strip of extra photos */
 .card details.more{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 .card details.more summary{
-  cursor:pointer;list-style:none;font-family:var(--mono);font-size:12.5px;color:var(--accent);
+  cursor:pointer;list-style:none;font-family:var(--mono);font-size:15px;color:var(--accent);
 }
 .card details.more summary::-webkit-details-marker{display:none}
 .card details.more summary::after{content:" ▾"}
@@ -446,3 +463,4 @@ img.zoomable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .card details.more p{margin-bottom:8px}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:6px;margin-top:6px}
 .card.photo .gallery img{height:64px;width:100%;object-fit:cover;border-radius:4px;border:1px solid var(--line-2)}
+.card.photo .gallery img.cert-thumb{object-fit:contain;background:#fff}

@@ -248,22 +248,37 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
   background:var(--bg);border:2px solid var(--accent);
 }
 .tl-item.gold::before{border-color:var(--amber)}
-.tl-item-layout{display:flex;align-items:flex-start;gap:24px}
-.tl-copy{flex:1;min-width:0}
-.tl-certs{display:flex;flex:0 0 126px;width:126px;flex-direction:column;gap:8px}
-.tl-cert{display:block;flex:0 0 126px;width:126px;border:1px solid var(--line-2);border-radius:6px;background:#fff;overflow:hidden;transition:border-color .2s,transform .2s}
-.tl-certs .tl-cert{flex:none;width:100%}
-.tl-certs .tl-cert img{height:auto;object-fit:contain}
+/* certificates sit under the entry's text, in an evenly spaced row; same height, frame hugs each certificate */
+.tl-item-layout{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.tl-copy{width:100%;min-width:0}
+.tl-certs{display:flex;flex-wrap:wrap;gap:12px}
+.tl-cert{
+  display:block;flex:none;height:120px;
+  border:1px solid var(--line-2);border-radius:6px;background:#fff;overflow:hidden;
+  transition:border-color .2s,transform .2s;
+}
 .tl-cert:hover{border-color:var(--accent);transform:translateY(-2px)}
-.tl-cert img{display:block;width:100%;height:auto;background:#fff}
+.tl-cert img{display:block;height:100%;width:auto;max-width:none}
+/* featured entries: main certificate beside the text, then a row of letters/photos, then links */
+.tl-item-layout.feature{flex-direction:row;align-items:flex-start;gap:24px}
+.tl-item-layout.feature .tl-copy{flex:1;width:auto}
+.tl-item-layout.feature > .tl-cert{height:160px}
+.tl-item-layout.feature > .tl-cert.portrait{height:215px}   /* portrait certificates (e.g. VEX) get extra height */
+.tl-media{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.tl-media .tl-cert{height:110px}
+.tl-media + .proof{margin-top:10px}
+@media(max-width:700px){
+  .tl-item-layout.feature{flex-direction:column;gap:12px}
+  .tl-item-layout.feature > .tl-cert{height:120px}
+  .tl-media .tl-cert{height:84px}
+}
 .tl-item .d{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.5px}
 .tl-item.gold .d{color:var(--amber)}
 .tl-item h4{font-size:16.5px;margin:3px 0 4px}
 .tl-item p{color:var(--muted);font-size:14px;max-width:720px}
 @media(max-width:600px){
-  .tl-item-layout{gap:14px}
-  .tl-cert{flex-basis:88px;width:88px}
-  .tl-certs{flex-basis:88px;width:88px}
+  .tl-certs{gap:8px}
+  .tl-cert{height:90px}
 }
 
 /* ---------- activities ---------- */
@@ -454,18 +469,9 @@ img.zoomable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 }
 .act-group::before{content:"// ";color:var(--accent)}
 .sec-head + .act-group{margin-top:0}
-
-/* activities: "Show more" inside a card, with a strip of extra photos */
-.card details.more{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
-.card details.more summary{
-  cursor:pointer;list-style:none;font-family:var(--mono);font-size:15px;color:var(--accent);
-}
-.card details.more summary::-webkit-details-marker{display:none}
-.card details.more summary::after{content:" ▾"}
-.card details.more[open] summary::after{content:" ▴"}
-.card details.more[open] summary{margin-bottom:8px}
-.card details.more summary:hover{text-decoration:underline}
-.card details.more p{margin-bottom:8px}
+/* activities: extra details inside a card (always visible), with a strip of extra photos */
+.card .more{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.card .more p{margin-bottom:8px}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:6px;margin-top:6px}
 .card.photo .gallery img{height:64px;width:100%;object-fit:cover;border-radius:4px;border:1px solid var(--line-2)}
 .card.photo .gallery img.cert-thumb{object-fit:contain;background:#fff}

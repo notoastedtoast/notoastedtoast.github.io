@@ -266,6 +266,7 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
 .tl-item-layout.feature .tl-cert.portrait{height:215px}   /* portrait certificates (e.g. VEX) get extra height */
 .tl-media{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
 .tl-media .tl-cert{height:110px}
+.tl-media video{width:min(100%,196px);height:110px;aspect-ratio:16/9;object-fit:contain;border:1px solid var(--line-2);border-radius:6px;background:#000}
 .tl-media + .proof{margin-top:10px}
 .press-links{display:flex;flex-wrap:wrap;gap:2px 8px;max-width:900px;font-size:0}
 .press-links a{display:inline-block;font-size:12px}
@@ -273,6 +274,7 @@ section{padding:96px 6vw;max-width:1200px;margin:0 auto}
   .tl-item-layout.feature{flex-direction:column;gap:12px}
   .tl-item-layout.feature .tl-cert{height:120px}
   .tl-media .tl-cert{height:84px}
+  .tl-media video{width:min(100%,149px);height:84px}
 }
 .tl-item .d{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.5px}
 .tl-item.gold .d{color:var(--amber)}
